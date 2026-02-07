@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_V1 } from "../services/apiBase";
 
 export default function StoryChapters({
   part,
@@ -10,7 +11,7 @@ export default function StoryChapters({
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/v1/content/story")
+      .get(`${API_V1}/content/story`)
       .then((res) => {
         const filtered = res.data.data
           .filter((s) => s.part === part)

@@ -193,10 +193,11 @@
 
 
 import { useEffect, useRef, useState } from "react";
+import { API_V1 } from "../../services/apiBase";
 import axios from "axios";
 
-const API_AI = "http://localhost:5000/api/v1/ai/ask";
-const API_CHATS = "http://localhost:5000/api/v1/chats";
+const API_AI = `${API_V1}/ai/ask`;
+const API_CHATS = `${API_V1}/chats`;
 
 // TEMP user id (later replace with auth/JWT)
 const USER_ID = "guest-user";

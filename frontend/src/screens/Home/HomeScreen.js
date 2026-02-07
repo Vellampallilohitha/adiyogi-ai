@@ -197,6 +197,7 @@ import { getAutoMantra } from "../../utils/autoMantra";
 import "./home.css";
 import ShivaFace from "../../assets/shiva/shiva-face.jpg";
 import axios from "axios";
+import { API_ADMIN } from "../../services/apiBase";
 
 export default function HomeScreen({ onResume, goTo }) {
   const [quote, setQuote] = useState(null);
@@ -247,16 +248,6 @@ export default function HomeScreen({ onResume, goTo }) {
     if (lockRef.current) return;
     lockRef.current = true;
 
-    const raw = localStorage.getItem("isAdmin");
-    let isAdmin = false;
-    if (raw) {
-      try {
-        const parsed = JSON.parse(raw);
-        isAdmin = parsed === true || parsed?.role === "admin";
-      } catch {
-        isAdmin = raw === "true";
-      }
-    }
     requestAnimationFrame(async () => {
       const secret = window.prompt("🕉️ Enter Admin Key");
       if (!secret) {
@@ -266,7 +257,7 @@ export default function HomeScreen({ onResume, goTo }) {
 
       try {
         const res = await axios.post(
-          "http://localhost:5000/api/admin/verify",
+          `${API_ADMIN}/verify`,
           { secret }
         );
 

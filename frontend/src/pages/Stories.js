@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_V1 } from "../services/apiBase";
 import { Link } from "react-router-dom";
 
 export default function Stories() {
@@ -7,7 +8,7 @@ export default function Stories() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/v1/content/story")
+      .get(`${API_V1}/content/story`)
       .then((res) => setStories(res.data.data))
       .catch(console.error);
   }, []);

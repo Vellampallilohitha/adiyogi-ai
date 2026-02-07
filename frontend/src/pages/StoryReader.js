@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_V1 } from "../services/apiBase";
 
 export default function StoryReader({ slug, onBack }) {
   const [story, setStory] = useState(null);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/content/story/${slug}`)
+      .get(`${API_V1}/content/story/${slug}`)
       .then((res) => setStory(res.data.data))
       .catch(console.error);
   }, [slug]);

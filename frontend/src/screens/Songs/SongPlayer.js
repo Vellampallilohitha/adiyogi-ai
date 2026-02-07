@@ -36,10 +36,9 @@ const styles = {
   container: {
     padding: 20,
     minHeight: "100vh",
-    background: "transparent",
+    background: "rgba(2,6,23,0.55)",
     color: "#e5e7eb",
     backdropFilter: "blur(6px)",
-background: "rgba(2,6,23,0.55)",
     borderRadius: 12,
   },
   back: {

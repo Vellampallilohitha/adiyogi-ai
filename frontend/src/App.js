@@ -71,7 +71,7 @@
 //   const today = new Date().toDateString();
 
 //   if (last !== today) {
-//     fetch("http://localhost:5000/api/stats/app-open", {
+//     fetch(`${API_STATS}/app-open`, {
 //       method: "POST",
 //     });
 //     localStorage.setItem("lastAppOpen", today);
@@ -334,6 +334,7 @@ import VibhutiParticles from "./components/VibhutiParticles";
 
 import AdminDashboard from "./screens/Admin/AdminDashboard";
 import { runDailySadhanaReminder } from "./utils/sadhanaReminder";
+import { API_STATS } from "./services/apiBase";
 
 function App() {
   const [mainTab, setMainTab] = useState("home");
@@ -363,7 +364,7 @@ function App() {
     const today = new Date().toDateString();
 
     if (last !== today) {
-      fetch("http://localhost:5000/api/stats/app-open", {
+      fetch(`${API_STATS}/app-open`, {
         method: "POST",
       });
       localStorage.setItem("lastAppOpen", today);

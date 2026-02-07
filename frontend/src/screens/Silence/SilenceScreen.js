@@ -69,6 +69,7 @@
 
 import { useState } from "react";
 import { useEffect } from "react";
+import { API_STATS } from "../../services/apiBase";
 
 import TimedSilence from "./TimedSilence";
 import Pranayama from "./Pranayama";
@@ -78,7 +79,7 @@ import GuidedMeditation from "./GuidedMeditation";
 export default function SilenceScreen() {
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/stats/silence", {
+    fetch(`${API_STATS}/silence`, {
       method: "POST",
     });
   }, []);

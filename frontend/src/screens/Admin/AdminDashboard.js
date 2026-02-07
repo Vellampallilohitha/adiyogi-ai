@@ -1,8 +1,9 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import AdminContentManager from "./AdminContentManager";
 import AdminUserManager from "./AdminUserManager";
 import "./admin.css";
+import { API_ADMIN } from "../../services/apiBase";
 
 export default function AdminDashboard() {
   const [stats, setStats] = useState(null);
@@ -44,10 +45,10 @@ export default function AdminDashboard() {
   }, []);
 
   /* ================= LOAD STATS ================= */
-  const loadStats = async () => {
+  const loadStats = useCallback(async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/admin/stats",
+        `${API_ADMIN}/stats`,
         { headers: authHeaders }
       );
       setStats(res.data);
@@ -56,11 +57,11 @@ export default function AdminDashboard() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [authHeaders]);
 
   useEffect(() => {
     loadStats();
-  }, []);
+  }, [loadStats]);
 
   /* ================= EXIT ADMIN ================= */
   const exitAdmin = () => {
@@ -75,7 +76,7 @@ export default function AdminDashboard() {
     if (!secret) return;
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/admin/verify-super",
+        `${API_ADMIN}/verify-super`,
         { secret },
         { headers: authHeaders }
       );
@@ -182,7 +183,7 @@ export default function AdminDashboard() {
     setSuperBusy(true);
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/admin/content",
+        `${API_ADMIN}/content`,
         { headers: authHeaders }
       );
       const rows = res.data || [];
@@ -227,14 +228,14 @@ export default function AdminDashboard() {
     setSuperBusy(true);
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/admin/content",
+        `${API_ADMIN}/content`,
         { headers: authHeaders }
       );
       const rows = (res.data || []).filter((r) => r.status === "pending");
       await Promise.all(
         rows.map((r) =>
           axios.put(
-            `http://localhost:5000/api/admin/content/${r._id}`,
+            `${API_ADMIN}/content/${r._id}`,
             { status: "approved" },
             { headers: authHeaders }
           )

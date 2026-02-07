@@ -1,24 +1,24 @@
 import { useEffect, useState } from "react";
-import { fetchContentByType } from "../../services/content.api";
+import { API_V1 } from "../../services/apiBase";
 
 export default function KnowledgeList({ type, title, onSelect }) {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-  setLoading(true);
-  fetch(`http://localhost:5000/api/v1/content/${type}`)
-    .then((res) => res.json())
-    .then((json) => {
-      console.log("RAW API RESPONSE:", json);
-      setItems(json.data || []);
-      setLoading(false);
-    })
-    .catch((err) => {
-      console.error("FETCH ERROR:", err);
-      setLoading(false);
-    });
-}, [type]);
+    setLoading(true);
+    fetch(`${API_V1}/content/${type}`)
+      .then((res) => res.json())
+      .then((json) => {
+        console.log("RAW API RESPONSE:", json);
+        setItems(json.data || []);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("FETCH ERROR:", err);
+        setLoading(false);
+      });
+  }, [type]);
 
   if (loading) return <p style={{ padding: 16 }}>Loading…</p>;
 
@@ -38,10 +38,9 @@ export default function KnowledgeList({ type, title, onSelect }) {
             padding: 14,
             marginBottom: 10,
             borderRadius: 10,
-            background: "#111",
+            background: "rgba(2,6,23,0.55)",
             cursor: "pointer",
             backdropFilter: "blur(6px)",
-background: "rgba(2,6,23,0.55)",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",

@@ -1,2 +1,4 @@
-const API_BASE_URL = "http://localhost:5000/api/v1";
+import { API_V1 } from "./apiBase";
+
+const API_BASE_URL = API_V1;
 export default API_BASE_URL;

@@ -1,6 +1,7 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { API_ADMIN } from "../../services/apiBase";
 
 const CONTENT_TYPES = [
   "quote",
@@ -52,10 +53,10 @@ export default function AdminContentManager({ onBack }) {
     []
   );
 
-  const load = async () => {
+  const load = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/content", {
+      const res = await axios.get(`${API_ADMIN}/content`, {
         headers: authHeaders,
       });
       setItems(res.data || []);
@@ -64,11 +65,11 @@ export default function AdminContentManager({ onBack }) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [authHeaders]);
 
   useEffect(() => {
     load();
-  }, []);
+  }, [load]);
 
   const filtered = items.filter((i) => {
     const matchType = typeFilter === "all" || i.type === typeFilter;
@@ -136,13 +137,13 @@ export default function AdminContentManager({ onBack }) {
     try {
       if (editing?._id) {
         await axios.put(
-          `http://localhost:5000/api/admin/content/${editing._id}`,
+          `${API_ADMIN}/content/${editing._id}`,
           payload,
           { headers: authHeaders }
         );
         toast.success("Content updated");
       } else {
-        await axios.post("http://localhost:5000/api/admin/content", payload, {
+        await axios.post("${API_ADMIN}/content", payload, {
           headers: authHeaders,
         });
         toast.success("Content created");
@@ -158,7 +159,7 @@ export default function AdminContentManager({ onBack }) {
   const setStatus = async (item, status) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/admin/content/${item._id}`,
+        `${API_ADMIN}/content/${item._id}`,
         { status },
         { headers: authHeaders }
       );
@@ -174,7 +175,7 @@ export default function AdminContentManager({ onBack }) {
     if (!window.confirm("Revert this revision?")) return;
     try {
       await axios.put(
-        `http://localhost:5000/api/admin/content/${item._id}/revert`,
+        `${API_ADMIN}/content/${item._id}/revert`,
         { index },
         { headers: authHeaders }
       );
@@ -190,7 +191,7 @@ export default function AdminContentManager({ onBack }) {
     if (!window.confirm("Delete this content item?")) return;
     try {
       await axios.delete(
-        `http://localhost:5000/api/admin/content/${item._id}`,
+        `${API_ADMIN}/content/${item._id}`,
         { headers: authHeaders }
       );
       await load();

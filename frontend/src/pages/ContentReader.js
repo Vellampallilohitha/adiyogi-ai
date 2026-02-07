@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_V1 } from "../services/apiBase";
 import Toast from "../components/Toast";
 
 export default function ContentReader({ type, slug, onBack }) {
@@ -12,7 +13,7 @@ export default function ContentReader({ type, slug, onBack }) {
     setContent(null); // reset to avoid stale render
 
     axios
-      .get(`http://localhost:5000/api/v1/content/${type}/${slug}`)
+      .get(`${API_V1}/content/${type}/${slug}`)
       .then((res) => {
         const data = res.data?.data;
         if (!data) return;

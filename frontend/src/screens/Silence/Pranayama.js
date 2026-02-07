@@ -225,7 +225,7 @@ export default function PranayamaScreen({ onBack }) {
     }, 15000);
 
     return () => clearInterval(timerRef.current);
-  }, [isRunning, language, voiceOn]);
+  }, [guideCycle, isRunning]);
 
   /* 🧘 STOP AFTER ONE ROUND */
   useEffect(() => {
@@ -236,7 +236,7 @@ export default function PranayamaScreen({ onBack }) {
       setCycle(0);
       setStepText("");
     }
-  }, [cycle]);
+  }, [cycle, isRunning, say, text.complete]);
 
   /* ▶️ CONTROLS */
   const start = () => {

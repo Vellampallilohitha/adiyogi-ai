@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import axios from "axios";
+import { API_ADMIN } from "../../services/apiBase";
 
 const ROLE_OPTIONS = ["user", "admin", "superadmin"];
 
@@ -16,10 +17,10 @@ export default function AdminUserManager({ onBack }) {
     []
   );
 
-  const load = async () => {
+  const load = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/users", {
+      const res = await axios.get(`${API_ADMIN}/users`, {
         headers: authHeaders,
       });
       setUsers(res.data || []);
@@ -29,17 +30,17 @@ export default function AdminUserManager({ onBack }) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [authHeaders]);
 
   useEffect(() => {
     load();
-  }, []);
+  }, [load]);
 
   const setRole = async (userId, role) => {
     setBusyId(userId);
     try {
       await axios.put(
-        `http://localhost:5000/api/admin/users/${userId}/role`,
+        `${API_ADMIN}/users/${userId}/role`,
         { role },
         { headers: authHeaders }
       );

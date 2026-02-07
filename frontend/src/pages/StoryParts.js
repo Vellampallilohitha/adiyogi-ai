@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_V1 } from "../services/apiBase";
 
 export default function StoryParts({ onSelectPart }) {
   const [parts, setParts] = useState([]);
@@ -7,7 +8,7 @@ export default function StoryParts({ onSelectPart }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/v1/content/story")
+      .get(`${API_V1}/content/story`)
       .then((res) => {
         const stories = res.data.data || [];
 
