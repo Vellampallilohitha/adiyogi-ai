@@ -1,0 +1,50 @@
+/* ===== AUTH COSMIC BACKGROUND ===== */
+.auth-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(circle at top, rgba(56,189,248,0.12), rgba(2,6,23,0.95) 60%),
+    linear-gradient(to bottom, #020617, #020617);
+  overflow: hidden;
+  position: relative;
+}
+
+/* 🌫️ MOVING CLOUDS */
+.auth-cloud {
+  position: absolute;
+  width: 600px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+  filter: blur(60px);
+  opacity: 0.35;
+  animation: cloudMove 90s linear infinite;
+}
+
+.cloud-1 { top: 20%; left: -40%; }
+.cloud-2 { top: 60%; left: -50%; animation-duration: 120s; }
+
+@keyframes cloudMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(220vw); }
+}
+/* ===== COSMIC FADE TRANSITION ===== */
+.fade-enter {
+  opacity: 0;
+  transform: scale(0.96);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.6s ease;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}

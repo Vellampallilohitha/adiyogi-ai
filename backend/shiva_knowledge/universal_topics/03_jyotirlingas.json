@@ -1,0 +1,152 @@
+{
+  "topic": "Jyotirlingas",
+  "source": "Shiva Purana",
+  "type": "FACT_LIST",
+  "description": "The twelve sacred Jyotirlingas are manifestations of Lord Shiva as pillars of divine light.",
+  "jyotirlingas": [
+    {
+      "id": 1,
+      "name": "Somnath",
+      "location": {
+        "temple": "Somnath Temple",
+        "city": "Prabhas Patan",
+        "state": "Gujarat",
+        "country": "India"
+      },
+      "significance": "First Jyotirlinga, representing Shiva as the Lord of the Moon.",
+      "associated_legend": "Chandra was freed from Daksha’s curse by worshipping Shiva here."
+    },
+    {
+      "id": 2,
+      "name": "Mallikarjuna",
+      "location": {
+        "temple": "Mallikarjuna Temple",
+        "city": "Srisailam",
+        "state": "Andhra Pradesh",
+        "country": "India"
+      },
+      "significance": "Symbol of Shiva and Parvati’s eternal union.",
+      "associated_legend": "Shiva stayed here to console Parvati after Kartikeya left Kailasa."
+    },
+    {
+      "id": 3,
+      "name": "Mahakaleshwar",
+      "location": {
+        "temple": "Mahakaleshwar Temple",
+        "city": "Ujjain",
+        "state": "Madhya Pradesh",
+        "country": "India"
+      },
+      "significance": "Shiva as Mahakala, the Lord of Time and Death.",
+      "associated_legend": "Shiva protects Ujjain from destruction by remaining eternally awake."
+    },
+    {
+      "id": 4,
+      "name": "Omkareshwar",
+      "location": {
+        "temple": "Omkareshwar Temple",
+        "city": "Mandhata",
+        "state": "Madhya Pradesh",
+        "country": "India"
+      },
+      "significance": "Represents the primordial sound Om.",
+      "associated_legend": "Vindhya mountain worshipped Shiva to attain greatness."
+    },
+    {
+      "id": 5,
+      "name": "Kedarnath",
+      "location": {
+        "temple": "Kedarnath Temple",
+        "city": "Kedarnath",
+        "state": "Uttarakhand",
+        "country": "India"
+      },
+      "significance": "Represents Shiva’s compassion and forgiveness.",
+      "associated_legend": "Pandavas sought Shiva’s forgiveness here after the Kurukshetra war."
+    },
+    {
+      "id": 6,
+      "name": "Bhimashankar",
+      "location": {
+        "temple": "Bhimashankar Temple",
+        "city": "Bhimashankar",
+        "state": "Maharashtra",
+        "country": "India"
+      },
+      "significance": "Shiva as destroyer of arrogance and evil.",
+      "associated_legend": "Shiva destroyed the demon Bhima at this place."
+    },
+    {
+      "id": 7,
+      "name": "Kashi Vishwanath",
+      "location": {
+        "temple": "Kashi Vishwanath Temple",
+        "city": "Varanasi",
+        "state": "Uttar Pradesh",
+        "country": "India"
+      },
+      "significance": "Shiva as the Lord of the Universe.",
+      "associated_legend": "Those who die in Kashi attain moksha."
+    },
+    {
+      "id": 8,
+      "name": "Trimbakeshwar",
+      "location": {
+        "temple": "Trimbakeshwar Temple",
+        "city": "Trimbak",
+        "state": "Maharashtra",
+        "country": "India"
+      },
+      "significance": "Embodies the Trimurti – Brahma, Vishnu, and Shiva.",
+      "associated_legend": "Origin of the sacred river Godavari."
+    },
+    {
+      "id": 9,
+      "name": "Vaidyanath",
+      "location": {
+        "temple": "Vaidyanath Dham",
+        "city": "Deoghar",
+        "state": "Jharkhand",
+        "country": "India"
+      },
+      "significance": "Shiva as the supreme healer.",
+      "associated_legend": "Ravana worshipped Shiva here to gain invincibility."
+    },
+    {
+      "id": 10,
+      "name": "Nageshwar",
+      "location": {
+        "temple": "Nageshwar Temple",
+        "city": "Dwarka",
+        "state": "Gujarat",
+        "country": "India"
+      },
+      "significance": "Protection from poison, fear, and negativity.",
+      "associated_legend": "Shiva destroyed the demon Daruka here."
+    },
+    {
+      "id": 11,
+      "name": "Rameshwaram",
+      "location": {
+        "temple": "Ramanathaswamy Temple",
+        "city": "Rameshwaram",
+        "state": "Tamil Nadu",
+        "country": "India"
+      },
+      "significance": "Bridge between Shiva and Rama.",
+      "associated_legend": "Rama worshipped Shiva before crossing to Lanka."
+    },
+    {
+      "id": 12,
+      "name": "Grishneshwar",
+      "location": {
+        "temple": "Grishneshwar Temple",
+        "city": "Ellora",
+        "state": "Maharashtra",
+        "country": "India"
+      },
+      "significance": "Symbol of compassion and devotion.",
+      "associated_legend": "Shiva restored a devoted woman’s son to life."
+    }
+  ]
+}

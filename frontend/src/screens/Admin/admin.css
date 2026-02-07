@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+.admin-root-super {
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-root-super::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(400px 200px at 15% 5%, rgba(125, 211, 252, 0.12), transparent),
+    radial-gradient(500px 240px at 90% 10%, rgba(167, 139, 250, 0.12), transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.admin-root-super > * {
+  position: relative;
+  z-index: 1;
+}
+
+.admin-panel h3 {
+  margin-top: 0;
+  letter-spacing: 0.3px;
+}
+
+.admin-badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #7dd3fc;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+@media (max-width: 900px) {
+  .admin-root-super {
+    padding: 18px;
+  }
+}

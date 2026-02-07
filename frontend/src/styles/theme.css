@@ -1,0 +1,28 @@
+:root {
+  --bg: #020617;
+  --card: #020617;
+  --border: #1e293b;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #7dd3fc;
+}
+
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --text: #020617;
+  --muted: #475569;
+  --accent: #2563eb;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  transition: background 1.5s ease, color 1.5s ease;
+}

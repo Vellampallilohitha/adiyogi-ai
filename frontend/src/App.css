@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #020617; /* deep night */
+  color: #e5e7eb;
+}
+
+h2 {
+  color: #9ad0ff; /* Shiva blue */
+}
+
+p {
+  line-height: 1.6;
+}

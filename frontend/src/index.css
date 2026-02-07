@@ -1,0 +1,476 @@
+/* ---------- KAILASA ASH (LIGHT) ---------- */
+:root {
+  --bg: #f6f7f8;            /* ash white */
+  --card: #ffffff;
+  --text: #1f2937;          /* soft charcoal */
+  --muted: #6b7280;
+  --border: #e5e7eb;
+
+  --accent: #475569;        /* stone blue */
+  --accent-soft: #e2e8f0;
+}
+
+/* ---------- ADIYOGI NIGHT (DARK) ---------- */
+[data-theme="dark"] {
+  --bg: #020617;            /* kailasa night */
+  --card: #020617;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --border: #1e293b;
+
+  --accent: #7dd3fc;        /* moonlight blue */
+  --accent-soft: #0f172a;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+.float {
+  animation: float 6s ease-in-out infinite;
+} 
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+button {
+  font-family: inherit;
+}
+input, textarea {
+  font-family: inherit;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent);
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 24px 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+button:focus {
+  outline: none;
+}
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.hidden-scrollbar {
+  scrollbar-width: none; /* Firefox */
+}
+@keyframes mantraPulse {
+  0% { opacity: 0.95; }
+  50% { opacity: 1; }
+  100% { opacity: 0.95; }
+}
+.mantra-pulse {
+  animation: mantraPulse 4s ease-in-out infinite;
+}
+@keyframes divineGlow {
+  0% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); }
+  50% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.3); }
+  100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); }
+}
+.divine-glow {
+  animation: divineGlow 5s ease-in-out infinite;
+}
+@keyframes energyMove {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-20px) translateX(20px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+.energy-move {
+  animation: energyMove 10s ease-in-out infinite;
+}
+.divine-light {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.2), rgba(255,255,255,0) 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  animation: divineGlow 5s ease-in-out infinite;
+}
+.slow-energy {
+  position: absolute;
+  bottom: -150px;
+  right: -150px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(255,255,255,0) 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  animation: energyMove 10s ease-in-out infinite;
+}
+.energy {
+  position: absolute;
+  bottom: -150px;
+  right: -150px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(255,255,255,0) 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  animation: energyMove 10s ease-in-out infinite;
+}
+/* ---------- ADDITIONAL STYLES CAN BE ADDED BELOW ---------- */
+@keyframes breathe {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
+.mantra-breathe {
+  animation: breathe 6s ease-in-out infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(2.2);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+.chakra-pulse {
+  animation: pulse 4s ease-in-out infinite;
+}
+@keyframes breathe {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  50% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.7; }
+}
+.breath-circle {
+  animation: breathe 6s ease-in-out infinite;
+}
+@keyframes breathe {
+  0% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 0.85; transform: scale(1); }
+}
+.mantra-breathe {
+  animation: breathe 6s ease-in-out infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(2.2);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+.chakra-pulse {
+  animation: pulse 4s ease-in-out infinite;
+}
+@keyframes breathe {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
+.breath-circle {
+  animation: breathe 6s ease-in-out infinite;
+}
+@keyframes breathe {
+  0% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 0.85; transform: scale(1); }
+}
+.mantra-breathe {
+  animation: breathe 6s ease-in-out infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(2.2);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+.chakra-pulse {
+  animation: pulse 4s ease-in-out infinite;
+}
+@keyframes breathe {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
+.breath-circle {
+  animation: breathe 6s ease-in-out infinite;
+}
+@keyframes breathe {
+  0% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 0.85; transform: scale(1); }
+}
+.mantra-breathe {
+  animation: breathe 6s ease-in-out infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(2.2);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+.chakra-pulse {
+  animation: pulse 4s ease-in-out infinite;
+}
+@keyframes breathe {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
+.breath-circle {
+  animation: breathe 6s ease-in-out infinite;
+}
+@keyframes breathe {
+  0% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 0.85; transform: scale(1); }
+}
+.mantra-breathe {
+  animation: breathe 6s ease-in-out infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(2.2);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+.chakra-pulse {
+  animation: pulse 4s ease-in-out infinite;
+}
+@keyframes breathe {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
+.breath-circle {
+  animation: breathe 6s ease-in-out infinite;
+}
+@keyframes rudraSpin {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes rudraPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+}
+@keyframes rudraSurge {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes trinetraBlink {
+  0%, 92%, 100% {
+    opacity: 0.6;
+  }
+  95% {
+    opacity: 1;
+  }
+}
+@keyframes rudraPulse {
+  0% { transform: scale(0.7); opacity: 0.4; }
+  50% { transform: scale(1.2); opacity: 0.9; }
+  100% { transform: scale(0.7); opacity: 0.4; }
+}
+
+@keyframes rudraSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes trinetraBlink {
+  0%, 85% { opacity: 0.9; }
+  90% { opacity: 0.3; }
+  100% { opacity: 0.9; }
+}
+
+@keyframes ashFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+@keyframes energyPulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.75; }
+  100% { opacity: 0.3; }
+}
+
+@keyframes energyFlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes shivaFloat {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-14px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes auraPulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.55;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+@keyframes trinetraPulse {
+  0% {
+    opacity: 0.4;
+    transform: scaleY(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.2);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scaleY(0.8);
+  }
+}
+@keyframes rudraPulse {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}
+
+@keyframes rudraFade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes pulse {
+  0% { transform: translateX(-50%) scale(1); opacity: 0.6; }
+  50% { transform: translateX(-50%) scale(1.15); opacity: 1; }
+  100% { transform: translateX(-50%) scale(1); opacity: 0.6; }
+}
+
+@keyframes energyMove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 200%; }
+}
+@keyframes fall {
+  from {
+    transform: translateY(-10px);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+@keyframes vibhutiFall {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+
+
+
+
+

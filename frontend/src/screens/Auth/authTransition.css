@@ -1,0 +1,17 @@
+/* 🌌 COSMIC ZOOM TRANSITION */
+.cosmic-exit {
+  animation: cosmicZoom 0.9s ease-in forwards;
+}
+
+@keyframes cosmicZoom {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+    filter: blur(12px);
+  }
+}

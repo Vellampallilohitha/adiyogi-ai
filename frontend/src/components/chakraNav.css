@@ -1,0 +1,121 @@
+/* ===============================
+   CHAKRA RING NAVBAR
+================================ */
+
+.chakra-nav {
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 220px;
+  pointer-events: auto;
+  z-index: 100;
+}
+
+/* 🌈 ROTATING RING */
+.chakra-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    #facc15,
+    #22c55e,
+    #38bdf8,
+    #6366f1,
+    #a855f7,
+    #facc15
+  );
+  filter: blur(14px);
+  opacity: 0.45;
+  animation: slowRotate 40s linear infinite;
+}
+
+@keyframes slowRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===============================
+   NAV ITEMS ON RING
+================================ */
+
+.chakra-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:
+    rotate(calc(90deg * var(--i)))
+    translate(92px)
+    rotate(calc(-90deg * var(--i)));
+  background: rgba(2, 6, 23, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  color: #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.chakra-item:hover {
+  transform:
+    rotate(calc(90deg * var(--i)))
+    translate(100px)
+    rotate(calc(-90deg * var(--i)));
+}
+
+/* ===============================
+   CENTER SILENCE
+================================ */
+
+.chakra-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -58%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.6),
+    rgba(2, 6, 23, 0.9)
+  );
+  border: 1px solid rgba(168, 85, 247, 0.6);
+  font-size: 28px;
+  cursor: pointer;
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0% {
+    transform: translate(-50%, -58%) scale(0.95);
+  }
+  50% {
+    transform: translate(-50%, -58%) scale(1.05);
+  }
+  100% {
+    transform: translate(-50%, -58%) scale(0.95);
+  }
+}
+
+/* ===============================
+   ACTIVE GLOW PER CHAKRA
+================================ */
+
+.chakra-item.active,
+.chakra-center.active {
+  box-shadow: 0 0 20px currentColor;
+}
+
+/* Chakra Colors */
+.manipura { color: #facc15; }
+.anahata { color: #22c55e; }
+.vishuddha { color: #38bdf8; }
+.ajna { color: #6366f1; }

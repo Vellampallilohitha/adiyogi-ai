@@ -1,0 +1,26 @@
+.ash-bg {
+  position: relative;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.ash-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/textures/ash-grain.png");
+  background-size: 400px 400px;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+@keyframes breathe {
+  0% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 0.85; transform: scale(1); }
+}
+
+.mantra-breathe {
+  animation: breathe 6s ease-in-out infinite;
+}
+
