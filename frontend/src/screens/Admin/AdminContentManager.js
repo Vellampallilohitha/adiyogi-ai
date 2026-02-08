@@ -143,7 +143,7 @@ export default function AdminContentManager({ onBack }) {
         );
         toast.success("Content updated");
       } else {
-        await axios.post("${API_ADMIN}/content", payload, {
+        await axios.post(`${API_ADMIN}/content`, payload, {
           headers: authHeaders,
         });
         toast.success("Content created");
