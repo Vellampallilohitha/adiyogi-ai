@@ -125,7 +125,7 @@
 //   },
 // };
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useShivaVoice from "../../hooks/useShivaVoice";
 
 const CYCLES_PER_ROUND = 6;
@@ -186,14 +186,14 @@ export default function PranayamaScreen({ onBack }) {
   const text = GUIDANCE[language];
 
   /* 🔊 SPEAK — ONLY ENGLISH */
-  const say = useCallback((msg) => {
+  const say = (msg) => {
     if (!voiceOn) return;
     if (language !== "en") return; // 🔒 English only
     speak(msg, "en-IN");
-  }, [language, speak, voiceOn]);
+  };
 
   /* 🌬️ ONE BREATH CYCLE */
-  const guideCycle = useCallback(() => {
+  const guideCycle = () => {
     setStepText(text.inhale);
     say(text.inhale);
 
@@ -211,7 +211,7 @@ export default function PranayamaScreen({ onBack }) {
       setStepText(text.empty);
       say(text.empty);
     }, 11000);
-  }, [say, text]);
+  };
 
   /* ▶️ MAIN LOOP */
   useEffect(() => {
@@ -225,7 +225,7 @@ export default function PranayamaScreen({ onBack }) {
     }, 15000);
 
     return () => clearInterval(timerRef.current);
-  }, [guideCycle, isRunning]);
+  }, [isRunning, language, voiceOn]);
 
   /* 🧘 STOP AFTER ONE ROUND */
   useEffect(() => {
@@ -236,7 +236,7 @@ export default function PranayamaScreen({ onBack }) {
       setCycle(0);
       setStepText("");
     }
-  }, [cycle, isRunning, say, text.complete]);
+  }, [cycle]);
 
   /* ▶️ CONTROLS */
   const start = () => {
