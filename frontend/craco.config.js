@@ -4,7 +4,7 @@ module.exports = {
       config.ignoreWarnings = [
         ...(config.ignoreWarnings || []),
         /Failed to parse source map/,
-        /@mediapipe\\/tasks-vision/,
+        /@mediapipe\/tasks-vision/,
       ];
       return config;
     },
